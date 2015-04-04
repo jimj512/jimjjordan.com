@@ -109,41 +109,6 @@ canvas {
 	position: relative;
 }
 
-.row {
-  clear: both;
-  position: relative;
-}
-
-.medium {display: none;}
-.large {display: none;}
-.xlarge {display: none;}
-.xxlarge {display: none;}
-.xxxlarge {display: none;}
-.grid-1,
-.grid-2,
-.grid-3,
-.grid-4,
-.grid-5,
-.grid-6,
-.grid-half,
-.grid-full,
-.grid-unit {
-  float: left;
-  width:100%;
-  margin:0 auto;
-  overflow: hidden;
-}
-
-.gallery .grid-unit,
-.grid-half {
-  width:50%;
-  margin: 0 auto;
-}
-
-.grid-flow-opposite{
-  float:right
-}
-
 /* Micro Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/
 For best results, use your favorite clearfix here.
 -------------------------------------------------------------- */
@@ -156,24 +121,38 @@ For best results, use your favorite clearfix here.
 body {
   font: 100%/1.5 sans-serif;
   .serif;
-  -webkit-transition: all .25s ease;
+  height: 100%;
+  background: white;
+}
+
+.left {
+ width: 100%;
+}
+.right {
+  width: 80%;
+  padding: 12% 5%;
+  float: left;
+  position: relative;
+  bottom: 7em;
+  background: white;
+  margin: 5% 5% -16% 5%;
+  -webkit-box-shadow: 0 0 30px 1px rgba(0,0,0,.05);
+box-shadow: 0 0 30px 1px rgba(0,0,0,.05);
+}
+
+a{
+    display: inline-block;
+-webkit-transition: all .25s ease;
 -moz-transition: all .25s ease;
 -ms-transition: all .25s ease;
 -o-transition: all .25s ease;
 transition: all .25s ease;
-
+    &:hover {
+      .brush {
+        display: inline;
+      }
+    }
 }
-
-section {
-  margin-bottom: 2em;
-}
-
-footer {
-  font-size: 0.9em;
-  border-top: 1px solid #ccc;
-  padding: 0.5em 0 2.5em;
-}
-
 /* Typography
 -------------------------------------------------------------- */
 .serif {font-family: 'merriweather';}
@@ -205,317 +184,27 @@ a:focus,
 a:hover {
   color: @lightgrey;
 }
-.avatar {
-  height: 300px; 
-  background: @black;
-  border-top: 20px solid @black;
-  background: url('../images/photo.png') no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-.name {
-  background: @black;
-  padding: 5%;
-  width: 90%;
-  position: relative;
-  display: inline;
-  float: right;
-  line-height: 1;
-}
-.blurb {
-  float: right;
-  color: @black;
-  background: @lightgrey;
-  padding: 10% 5% 8%;
-  width: 50%;
-  h4 {margin-bottom: 4px;}
-  a {
-    color: @black;
-    border-bottom: 1px solid @black;
-    &:focus, &:hover {
-      opacity: .75;
-      bottom: 1px;
-    }
-  }
-}
-.icon {
-  width: 20px;
-  display: inline;
-  color: black;
-  opacity: .2;
-  margin-right: 10px;
-  top: 3px;
-  position: relative;
-}
-.post-tag p {margin-top: 5px;}
-.dribbble {
-   background: url(https://d13yacurqjgara.cloudfront.net/users/241214/screenshots/1907426/dribbble.png) no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 200px;
-  &:hover {.shadow;}
-}
-.exposure {
-    width: 50%;
-  padding: 0;
-  background: url(https://exposure.imgix.net/production/posts/89546/cover-photo/cover-1423539042.jpg?w=1200&q=92&fm=pjpg&auto=format)no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-    height: 400px;
-  bottom: 150px;
-  position: relative;
-  float: right;
-  right: 1px;
-  position: relative;
-  .post-tag {
-    position: absolute;
-  bottom: 0;
-  width: 90%;
-  background: #bae4eb;
-  right: 0;
-  padding: 1em 5%;
-  }
-}
-.listening {
-    width: 50%;
-  padding: 0;
-  background: url(http://cdn4.pitchfork.com/albums/21347/homepage_large.dc7a8dc5.jpg)no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 400px;
-  top: -50px;
-  position: relative;
-  .post-tag {
-    position: absolute;
-  bottom: 0;
-  width: 90%;
-  background: #342d27;
-  right: 0;
-  padding: 1em 5%;
-  }
-}
-.fuckin-brown {background: #7b7163;} 
-.post-tag {
-  padding: 1em 5%;
-  width: 90%;
-  right: 5px;
-}
-.post-id {
-  .sans-serif;
-  color: black;
-  opacity: .2;
-  display: inline;
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-.twitter {
-    background: #6dcff6;
-    padding: 25% 5% 5%;
-    width: 50%;
-    &:hover {.shadow;}
-}
-// medium 
-@media screen and (min-width: 480px) {
-  .grid-1     { width: 16.666666667%; }
-  .grid-2     { width: 33.333333333%; }
-  .grid-3,
-  .grid-half  { width: 45%;
-  padding: 1em 2.5%; }
-  .grid-4     { width: 66.666666668%; }
-  .grid-5     { width: 83.333333335%; }
-  .grid-6,
-  .grid-full  { width: 100%; }
 
-  .gallery .grid-unit {
-    width: 30.30303030303%;
-  }
-  .content-pad-right {
-    padding-right: 4%; /* Use (or don't) as necessary. */
-  }
-  .content-pad-left {
-    padding-left: 4%;
-  }
-  #content {
-    width: 80%;
-  margin: 10% auto 0;
-  }
-  .small {display: none;}
-  .medium {display: inline;}
-  .blurb {
-    width: 40%;
-  }
-  .name {
-    width: 40%;
-    margin-top:120px;
-    font-size: 90%;
-    padding: 15% 5% 5%;
-  }
-  a:hover .twitter {
-    color: white;
-  }
-  .avatar {
-    width: 50%;
-    position: relative;
-    float: left;
-    height: 385px;
-  left: 1px;
-  }
-  .dribbble {height: 400px;}
-  .twitter {
-    width: 40%;
-    padding: 14% 8% 0 2%;
-  }
-
-}
-// large 
-@media screen and (min-width: 680px) {
-  .medium {display: none;}
-  .large {display: inline;}
-  .avatar {
-      border-bottom: 40px solid @black;
-  }
-  .blurb {
-      width: 40%;
-  margin-top: 0;
-  position: relative;
-      padding: 5%;
-  }
-  .name {margin-top: 100px;}
-}
-// xlarge 
-@media screen and (min-width: 960px) {
-  #content {
-    margin: 5% auto;
-  }
-  .large {display: none;}
-  .xlarge {display: inline;}
-  .name {
-     width: 33.333333333%;
-  padding: 162px 0 40px;
-  margin-top: 202px;
-  float: left;
-  h1 {left: 30px;}
-  }
-  .avatar {
-      border-margin-top: 40px solid @black;
-      width: 33.333333333%;
-      height: 500px;
-      border-bottom: none;
-  }
-  .blurb {
-          width: 23.333333%;
- margin-top: 80px;
-  position: relative;
-    float: right;
-  padding: 5%;
-  }
-  .dribbble {
-        width: 66.66666%;
-  margin-top: 200px;
-  position: relative;
-  display: inline-block;
-  float: left;
-    &:hover {
-      width: 50%;
-      right: 2.5%;
+@media screen and (min-width: 740px){
+    .left {
+      width: 60%;
+      padding: 0;
+      height: 100%;
+      position: fixed;
+      background: url('../images/photo.png') top center;
+      background-size: cover;
+      img {display: none;}
     }
-  }
-  .fuckin-brown {
-  position: relative;
-  width: 100%;
-  display: none;
-  }
-  .twitter {
-      width: 23.3333%;
-    padding: 34% 8% 0 2%;
-  float: right;
-  }
-  .exposure {
-    width: 66.66666%;
-      float: left;
-    margin: 100px auto 0;
-    display: inline-block;
-    height: 500px;
-  }
-  .listening {
-    width: 33.3333%;
-      float: left;
+  .right {
+    padding: 5%;
+    width: 30%;
     margin: 0 auto;
-    display: inline-block;
-    height: 500px;
+    float: right;
+     -webkit-box-shadow: 0 0 30px 1px rgba(0,0,0,0);
+box-shadow: 0 0 30px 1px rgba(0,0,0,0);
+bottom: 0;
   }
+  .brush {
+  display: none;
 }
-@media screen and (min-width: 1140px) {
-  .xlarge {display: none;}
-  .xxlarge {display: inline;}
-  .avatar {
-    width: 25%;
-    padding: 0;
-  }
-  .name {
-    width: 25%;
-      margin-top: 81px;
-  }
-  .blurb {
-    width: 20%;
-      padding: 5% 2.5% 2.5%;
-      float: left;
-  }
-  .twitter {
-      width: 40%;
-  padding: 10% 7.5% 2.5% 2.5%;
-  }
-  .dribbble {
-    width: 25%;
-    padding: 0;
-    height: 520px;
-    margin-top: 0;
-    &:hover {
-      width: 25%;
-  height: 600px;
-  right: 0;
-    }
-  }
-}
-@media screen and (min-width: 1280px) {
-  .xxlarge {display: none;}
-  .xxxlarge {display: inline;}
-  .avatar {
-    width: 20%%;
-    padding: 0;
-    height: 600px;
-  }
-  .name {
-    width: 20%;
-    h1 {left: 15px;}
-    
-  }
-  .blurb {
-    width: 15%;
-      padding: 5% 2.5% 2.5%;
-      float: left;
-  }
-  .twitter {
-      width: 30%;
-  padding: 10% 7.5% 2.5% 2.5%;
-  }
-  .dribbble {
-    width: 40%;
-    padding: 0;
-    height: 520px;
-    margin-top: 200px;
-    &:hover {
-      width: 20%;
-  height: 600px;
-  right: 0;
-    }
-  }
 }
