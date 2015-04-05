@@ -55,7 +55,6 @@ table {
 @viewport {
   width: device-width;
 }
-
 html {
   overflow-y: auto;
   color: white;
@@ -63,68 +62,19 @@ html {
 
 -webkit-font-smoothing: antialiased !important;
 }
-
 img,
 audio,
 video,
 canvas {
   width: 100%;
 }
-
-@font-face {
-    font-family: 'interstateboldcondensed';
-    src: url('Interstate BoldCondensed-webfont.eot');
-    src: url('Interstate BoldCondensed-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Interstate BoldCondensed-webfont.woff2') format('woff2'),
-         url('Interstate BoldCondensed-webfont.woff') format('woff'),
-         url('Interstate BoldCondensed-webfont.ttf') format('truetype'),
-         url('Interstate BoldCondensed-webfont.svg#interstateboldcondensed') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face{ 
-  font-family: 'merriweather';
-  src: url('merriweather.eot');
-  src: url('merriweather.eot?#iefix') format('embedded-opentype'),
-       url('merriweather.woff') format('woff'),
-       url('merriweather.ttf') format('truetype'),
-       url('merriweather.svg#webfont') format('svg');
-}
-@black: #363636;
-@lightgrey: #f7f7f7;
-.shadow {
-  -webkit-box-shadow: 1px 1px 73px -9px rgba(0,0,0,0.15);
-  -moz-box-shadow: 1px 1px 73px -9px rgba(0,0,0,0.15);
-  box-shadow: 1px 1px 73px -9px rgba(0,0,0,0.15);
-  z-index: 200; 
-    position: relative;
-}
-/* Grid > 6 Column Mobile First
--------------------------------------------------------------- */
-#content {
-	width: 90%;
-  margin: 8% auto 0;
-	position: relative;
-}
-
-/* Micro Clearfix - http://nicolasgallagher.com/micro-clearfix-hack/
-For best results, use your favorite clearfix here.
--------------------------------------------------------------- */
-.cf:before, .cf:after { content:""; display:table; }
-.cf:after { clear:both; }
-.cf { zoom:1; } /* For IE 6/7 (trigger hasLayout) */
-
 /* Layout
 -------------------------------------------------------------- */
 body {
   font: 100%/1.5 sans-serif;
-  .serif;
   height: 100%;
   background: white;
 }
-
 .left {
  width: 100%;
  position: fixed;
@@ -138,72 +88,39 @@ body {
   background: white;
   margin: 105% 5% -16% 5%;
   -webkit-box-shadow: 0 0 30px 1px rgba(0,0,0,.05);
-box-shadow: 0 0 30px 1px rgba(0,0,0,.05);
+  box-shadow: 0 0 30px 1px rgba(0,0,0,.05);
 }
-
 a{
-    display: inline-block;
--webkit-transition: all .25s ease;
--moz-transition: all .25s ease;
--ms-transition: all .25s ease;
--o-transition: all .25s ease;
-transition: all .25s ease;
-    &:hover {
-      .brush {
-        display: inline;
-      }
+  display: inline-block;
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  &:hover {
+    .brush {
+      display: inline;
     }
+  }
 }
-/* Typography
--------------------------------------------------------------- */
-.serif {font-family: 'merriweather';}
-.sans-serif {font-family: 'interstateboldcondensed';}
-h1 {
-  .sans-serif;
-  font-size: 4em;
-  position: relative;
-  display: inline-block;
-}
-h3 {
-  .serif;
-  font-size: 1.25em;
-  color: white;
-  display: inline-block;
-}
-h4 {
-  .sans-serif;
-  font-size: 1.5em;
-}
-a {
-  text-decoration: none;
-  color: white;
-  border-bottom: 1px solid @lightgrey;
-  position: relative;
-}
-
-a:focus,
-a:hover {
-  color: @lightgrey;
-}
-
 @media screen and (min-width: 600px){
-    .left {
-      width: 60%;
-      padding: 0;
-      height: 100%;
-      position: fixed;
-      background: url('../images/photo.jpg') top center;
-      background-size: cover;
-      img {display: none;}
-    }
+  .left {
+    width: 60%;
+    padding: 0;
+    height: 100%;
+    position: fixed;
+    background: url('../images/photo.jpg') top center;
+    background-size: cover;
+    img {display: none;}
+  }
   .right {
     padding: 5%;
     width: 30%;
     margin: 0 auto;
     float: right;
      -webkit-box-shadow: 0 0 30px 1px rgba(0,0,0,0);
-box-shadow: 0 0 30px 1px rgba(0,0,0,0);
-bottom: 0;
+    box-shadow: 0 0 30px 1px rgba(0,0,0,0);
+    bottom: 0;
   }
   .brush {
     display: none;
